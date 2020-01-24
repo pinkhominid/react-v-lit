@@ -1,0 +1,168 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vanillawc/wc-codemirror@1.2.8/theme/monokai.css">
+<style>
+  main table { width: 100% }
+  th, td { text-align: left; vertical-align: top }
+  .CodeMirror { height: auto !important }
+</style>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@vanillawc/wc-codemirror@1.2.8/index.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@vanillawc/wc-codemirror@1.2.8/mode/javascript/javascript.js"></script>
+<script type=module src=lib/index.js defer></script>
+
+<h1>React v. Lit</h1>
+
+<p>Compares React and Lit implementations of the React homepage demos.</p>
+
+<p>The React side uses <a href=https://www.pika.dev/search?q=reactesm>React ESM</a> and <a href=https://pkg.fyi/npm:htm>HTM</a>. These tweaks eliminate the need for a build step. You can put up the <a href=https://reactjs.org target=_blank>standard React demos</a> in another tab to compare further.</p>
+
+<p><a href=https://lit-element.polymer-project.org/>LitElement</a> is used for most demos on the Lit side with the exception of Introducing Hooks which brings in <a href=https://pkg.fyi/npm:haunted>Haunted</a>.</p>
+
+<p>Worth noting is the install-time ESM-enabling technology, <a href=https://www.snowpack.dev>Snowpack</a>.</p>
+
+<table>
+  <tr><th></th><th>Size (GZIPPED, MINIFIED)<th></tr>
+  <tr><th>React ESM + HTM</th><td>38 KB + 0.6 KB</td></tr>
+  <tr><th>LitElement</th><td>6.9 KB</td></tr>
+  <tr><th>Haunted</th><td>5.6 KB</td></tr>
+</table>
+
+<main>
+  <section>
+    <h2>A Simple Component</h2>
+
+    <table>
+      <tr><th>React</th><th>Lit</th></tr>
+      <tr>
+        <td>
+          <wc-codemirror src="lib/react-simple.js" mode="javascript" theme="monokai"></wc-codemirror>
+        </td>
+        <td>
+          <wc-codemirror src="lib/lit-simple.js" mode="javascript" theme="monokai"></wc-codemirror>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <fieldset><legend>Output</legend>
+            <div id=hello-example></div>
+          </fieldset>
+        </td>
+        <td>
+          <fieldset><legend>Output</legend>
+            <hello-example name=Taylor></hello-example>
+          </fieldset>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>A Stateful Component</h2>
+
+    <table>
+      <tr><th>React</th><th>Lit</th></tr>
+      <tr>
+        <td>
+          <wc-codemirror src="lib/react-stateful.js" mode="javascript" theme="monokai"></wc-codemirror>
+        </td>
+        <td>
+          <wc-codemirror src="lib/lit-stateful.js" mode="javascript" theme="monokai"></wc-codemirror>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <fieldset><legend>Output</legend>
+            <div id=timer-example></div>
+          </fieldset>
+        </td>
+        <td>
+          <fieldset><legend>Output</legend>
+            <timer-example></timer-example>
+          </fieldset>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>An Application</h2>
+
+    <table>
+      <tr><th>React</th><th>Lit</th></tr>
+      <tr>
+        <td>
+          <wc-codemirror src="lib/react-app.js" mode="javascript" theme="monokai"></wc-codemirror>
+        </td>
+        <td>
+          <wc-codemirror src="lib/lit-app.js" mode="javascript" theme="monokai"></wc-codemirror>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <fieldset><legend>Output</legend>
+            <div id=todos-example></div>
+          </fieldset>
+        </td>
+        <td>
+          <fieldset><legend>Output</legend>
+            <todos-example></todos-example>
+          </fieldset>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>A Component Using External Plugins</h2>
+
+    <table>
+      <tr><th>React</th><th>Lit</th></tr>
+      <tr>
+        <td>
+          <wc-codemirror src="lib/react-external.js" mode="javascript" theme="monokai"></wc-codemirror>
+        </td>
+        <td>
+          <wc-codemirror src="lib/lit-external.js" mode="javascript" theme="monokai"></wc-codemirror>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <fieldset><legend>Output</legend>
+            <div id=markdown-example></div>
+          </fieldset>
+        </td>
+        <td>
+          <fieldset><legend>Output</legend>
+            <markdown-example></markdown-example>
+          </fieldset>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Introducing Hooks</h2>
+
+    <table>
+      <tr><th>React</th><th>Lit</th></tr>
+      <tr>
+        <td>
+          <wc-codemirror src="lib/react-hooks.js" mode="javascript" theme="monokai"></wc-codemirror>
+        </td>
+        <td>
+          <wc-codemirror src="lib/lit-hooks.js" mode="javascript" theme="monokai"></wc-codemirror>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <fieldset><legend>Output</legend>
+            <div id=hooks-example></div>
+          </fieldset>
+        </td>
+        <td>
+          <fieldset><legend>Output</legend>
+            <hooks-example></hooks-example>
+          </fieldset>
+        </td>
+      </tr>
+    </table>
+  </section>
+</main>
