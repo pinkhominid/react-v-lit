@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "haunted": "./haunted.js",
+    "htm": "./htm.js",
+    "lit-element": "./lit-element.js",
+    "react": "./react.js",
+    "react-dom": "./react-dom.js",
+    "remarkable": "./remarkable.js"
+  }
+}
