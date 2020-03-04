@@ -4,6 +4,9 @@
   "description": "Compares React and Lit implementations of the React homepage demos.",
   "module": "lib/index.js",
   "repository": "pinkhominid/react-v-lit",
+  "snowpack": {
+    "dedupe": ["lit-html"]
+  },
   "scripts": {
     "prepare": "snowpack --include \"lib/**/*.js\"",
     "start": "http-server -o"
